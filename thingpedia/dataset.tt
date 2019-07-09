@@ -1,0 +1,10 @@
+dataset @org.thingpedia.cryptocurrency {
+  query (p_slug :String) := @org.thingpedia.cryptocurrency.symbol(slug=p_slug)
+  #_[utterances=["symbol of $p_slug", "$p_slug symbol"]];
+
+  query (p_slug :String) := @org.thingpedia.cryptocurrency.description(slug=p_slug)
+  #_[utterances=["description of $p_slug", "$p_slug description"]];
+
+  query (p_slug :String) := @org.thingpedia.cryptocurrency.websites(slug=p_slug)
+  #_[utterances=["websites for $p_slug", "$p_slug websites"]];
+}

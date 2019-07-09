@@ -1,6 +1,7 @@
 {
-  "name": "project-cryptocurrency",
+  "name": "thingpedia",
   "version": "1.0.0",
   "description": "",
+  "main": "device.js",
   "author": "Ricky Grannis-Vu"
 }

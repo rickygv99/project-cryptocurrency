@@ -1,0 +1,9 @@
+{
+  "name": "project-cryptocurrency",
+  "version": "1.0.0",
+  "description": "",
+  "main": "device.js",
+  "scripts": {
+  },
+  "author": "Ricky Grannis-Vu"
+}

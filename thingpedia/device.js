@@ -20,7 +20,7 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
       password: this.state.password
     });
 
-    Tp.Helpers.Http.post("http://127.0.0.1:3000/signup", data, options)
+    Tp.Helpers.Http.post("https://almond-cryptocurrency.herokuapp.com/signup", data, options)
     .catch(err => {
       console.error(err);
     });
@@ -30,7 +30,7 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
    * Returns the cryptocurrency's symbol
    */
   get_symbol({ slug }) {
-    Tp.Helpers.Http.get("http://127.0.0.1:3000/coin?slug=" + slug, options)
+    Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/coin?slug=" + slug, options)
     .then(response => {
       return response.symbol;
     })
@@ -43,7 +43,7 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
    * Returns a description of the cryptocurrency
    */
   get_description({ slug }) {
-    Tp.Helpers.Http.get("http://127.0.0.1:3000/coin?slug=" + slug, options)
+    Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/coin?slug=" + slug, options)
     .then(response => {
       return response.description;
     })
@@ -56,7 +56,7 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
    * Returns the websites for the cryptocurrency
    */
   get_websites({ slug }) {
-    Tp.Helpers.Http.get("http://127.0.0.1:3000/coin?slug=" + slug, options)
+    Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/coin?slug=" + slug, options)
     .then(response => {
       return response.urls.website;
     })

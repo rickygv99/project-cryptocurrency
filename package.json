@@ -1,6 +1,12 @@
 {
   "name": "project-cryptocurrency",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cryptocurrency project for the Almond team",
+  "scripts": {
+    "build": "npm run copy && npm run zip && npm run clean",
+    "copy": "mkdir thingpedia_zip && cp thingpedia/device.js thingpedia_zip/ && cp thingpedia/package.json thingpedia_zip/",
+    "zip": "cd thingpedia_zip && zip -r ../thingpedia.zip * && cd ..",
+    "clean": "rm -r thingpedia_zip",
+  },
   "author": "Ricky Grannis-Vu"
 }

@@ -1,9 +1,8 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server of the cryptocurrency project for the Almond team",
   "main": "server.js",
-  "scripts": {},
   "author": "Ricky Grannis-Vu",
   "dependencies": {
     "bcrypt": "^3.0.6",

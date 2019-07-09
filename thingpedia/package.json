@@ -1,7 +1,7 @@
 {
   "name": "thingpedia",
   "version": "1.0.0",
-  "description": "",
+  "description": "Thingpedia interface of the cryptocurrency project for the Almond team",
   "main": "device.js",
   "author": "Ricky Grannis-Vu"
 }

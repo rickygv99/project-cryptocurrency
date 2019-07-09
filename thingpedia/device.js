@@ -55,6 +55,20 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
   }
 
   /*
+   * Returns the cryptocurrency's logo
+   */
+  get_logo({ slug }) {
+    return Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/coin?slug=" + slug)
+    .then(response => {
+      return JSON.parse(response);
+    }).then(response => {
+      return [{ logo: response.logo }];
+    }).catch(err => {
+      console.error(err);
+    });
+  }
+
+  /*
    * Returns the websites for the cryptocurrency
    */
   get_websites({ slug }) {

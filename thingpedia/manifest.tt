@@ -14,6 +14,12 @@ class @org.thingpedia.cryptocurrency {
   #_[confirmation="description"]
   #[doc="Returns a description of the cryptocurrency."];
 
+  query logo(in req slug: String,
+             out picture_url: Entity(tt:picture))
+  #_[canonical="logo"]
+  #_[confirmation="logo"]
+  #[doc="Returns the cryptocurrency's logo."];
+
   list query websites(in req slug: String,
                       out website: String)
   #_[canonical="websites"]

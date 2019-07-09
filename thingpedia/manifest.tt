@@ -5,15 +5,15 @@ class @org.thingpedia.cryptocurrency {
   query symbol(in req slug: String)
   #_[canonical="symbol"]
   #_[confirmation="symbol"]
-  #[doc="Returns the cryptocurrency's symbol."]
+  #[doc="Returns the cryptocurrency's symbol."];
 
   query description(in req slug: String)
   #_[canonical="description"]
   #_[confirmation="description"]
-  #[doc="Returns a description of the cryptocurrency."]
+  #[doc="Returns a description of the cryptocurrency."];
 
   list query websites(in req slug: String)
   #_[canonical="websites"]
   #_[confirmation="websites"]
-  #[doc="Returns the websites for the cryptocurrency."]
+  #[doc="Returns the websites for the cryptocurrency."];
 }

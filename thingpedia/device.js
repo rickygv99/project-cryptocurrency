@@ -32,10 +32,12 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
   get_symbol({ slug }) {
     Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/coin?slug=" + slug, options)
     .then(response => {
-      return response.symbol;
+      console.error("Response: " + response);
+      return [ response.symbol ];
     })
     .catch(err => {
       console.error(err);
+      return [];
     });
   }
 
@@ -45,10 +47,11 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
   get_description({ slug }) {
     Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/coin?slug=" + slug, options)
     .then(response => {
-      return response.description;
+      return [ response.description ];
     })
     .catch(err => {
       console.error(err);
+      return [];
     });
   }
 
@@ -58,10 +61,11 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
   get_websites({ slug }) {
     Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/coin?slug=" + slug, options)
     .then(response => {
-      return response.urls.website;
+      return [ response.urls.website ];
     })
     .catch(err => {
       console.error(err);
+      return [];
     });
   }
 };

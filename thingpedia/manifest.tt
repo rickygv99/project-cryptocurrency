@@ -2,17 +2,20 @@ class @org.thingpedia.cryptocurrency {
   import loader from @org.thingpedia.v2();
   import config from @org.thingpedia.config.basic_auth();
 
-  query symbol(in req slug: String)
+  query symbol(in req slug: String,
+               out symbol: String)
   #_[canonical="symbol"]
   #_[confirmation="symbol"]
   #[doc="Returns the cryptocurrency's symbol."];
 
-  query description(in req slug: String)
+  query description(in req slug: String,
+                    out description: String)
   #_[canonical="description"]
   #_[confirmation="description"]
   #[doc="Returns a description of the cryptocurrency."];
 
-  list query websites(in req slug: String)
+  list query websites(in req slug: String,
+                      out website: String)
   #_[canonical="websites"]
   #_[confirmation="websites"]
   #[doc="Returns the websites for the cryptocurrency."];

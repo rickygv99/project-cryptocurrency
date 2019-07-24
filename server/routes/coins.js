@@ -25,4 +25,24 @@ router.get('/coin', (req, res) => {
   });
 })
 
+router.get('/quotes', (req, res) => {
+  let slug = req.query.slug;
+
+  fetch(COIN_MARKET_CAP_URL + "/cryptocurrency/quotes/latest?slug=" + slug, {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      "X-CMC_PRO_API_KEY": COIN_MARKET_CAP_API_KEY
+    }
+  }).then(response => {
+    return response.json();
+  }).then(response => {
+    for (key in response.data) {
+      res.status(200).json(response.data[key]);
+    }
+  }).catch(err => {
+    console.error(err);
+  });
+})
+
 module.exports = router;

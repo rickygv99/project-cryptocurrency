@@ -10,4 +10,16 @@ dataset @org.thingpedia.cryptocurrency {
 
   query (p_slug :String) := @org.thingpedia.cryptocurrency.websites(slug=p_slug)
   #_[utterances=["websites for $p_slug", "$p_slug websites"]];
+
+  query (p_slug :String) := @org.thingpedia.cryptocurrency.circulating_supply(slug=p_slug)
+  #_[utterances=["circulating supply of $p_slug", "$p_slug circulating supply"]];
+
+  query (p_slug :String) := @org.thingpedia.cryptocurrency.total_supply(slug=p_slug)
+  #_[utterances=["total supply of $p_slug", "$p_slug total supply"]];
+
+  query (p_slug :String) := @org.thingpedia.cryptocurrency.max_supply(slug=p_slug)
+  #_[utterances=["max supply of $p_slug", "$p_slug max supply"]];
+
+  query (p_slug :String, p_currency :String) := @org.thingpedia.cryptocurrency.price(slug=p_slug, currency=p_currency)
+  #_[utterances=["price of $p_slug in $p_currency", "$p_slug price in $p_currency"]];
 }

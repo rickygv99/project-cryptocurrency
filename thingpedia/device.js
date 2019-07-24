@@ -81,4 +81,60 @@ module.exports = class Cryptocurrency extends Tp.BaseDevice {
       console.error(err);
     });
   }
+
+  /*
+   * Returns the circulating supply of the cryptocurrency
+   */
+  get_circulating_supply({ slug }) {
+    return Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/quotes?slug=" + slug)
+    .then(response => {
+      return JSON.parse(response);
+    }).then(response => {
+      return [{ circulating_supply: response.circulating_supply }];
+    }).catch(err => {
+      console.error(err);
+    });
+  }
+
+  /*
+   * Returns the total supply of the cryptocurrency
+   */
+  get_total_supply({ slug }) {
+    return Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/quotes?slug=" + slug)
+    .then(response => {
+      return JSON.parse(response);
+    }).then(response => {
+      return [{ total_supply: response.total_supply }];
+    }).catch(err => {
+      console.error(err);
+    });
+  }
+
+  /*
+   * Returns the max supply of the cryptocurrency
+   */
+  get_max_supply({ slug }) {
+    return Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/quotes?slug=" + slug)
+    .then(response => {
+      return JSON.parse(response);
+    }).then(response => {
+      return [{ max_supply: response.max_supply }];
+    }).catch(err => {
+      console.error(err);
+    });
+  }
+
+  /*
+   * Returns the current price of the cryptocurrency
+   */
+  get_price({ slug, currency }) {
+    return Tp.Helpers.Http.get("https://almond-cryptocurrency.herokuapp.com/quotes?slug=" + slug)
+    .then(response => {
+      return JSON.parse(response);
+    }).then(response => {
+      return [{ price: response.quote[currency].price }];
+    }).catch(err => {
+      console.error(err);
+    });
+  }
 };

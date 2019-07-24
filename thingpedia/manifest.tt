@@ -25,4 +25,29 @@ class @org.thingpedia.cryptocurrency {
   #_[canonical="websites"]
   #_[confirmation="websites"]
   #[doc="Returns the websites for the cryptocurrency."];
+
+  query circulating_supply(in req slug: String,
+                           out circulating_supply: String)
+  #_[canonical="circulating supply"]
+  #_[confirmation="circulating supply"]
+  #[doc="Returns the circulating supply of the cryptocurrency."];
+
+  query total_supply(in req slug: String,
+                     out total_supply: String)
+  #_[canonical="total supply"]
+  #_[confirmation="total supply"]
+  #[doc="Returns the total supply of the cryptocurrency."];
+
+  query max_supply(in req slug: String,
+                   out max_supply: String)
+  #_[canonical="max supply"]
+  #_[confirmation="max supply"]
+  #[doc="Returns the max supply of the cryptocurrency."];
+
+  query price(in req slug: String,
+              in req currency: String,
+              out price: String)
+  #_[canonical="price"]
+  #_[confirmation="price"]
+  #[doc="Returns the current price of the cryptocurrency."];
 }
